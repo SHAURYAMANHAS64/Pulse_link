@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulseLink</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+       <!-- <link rel="stylesheet" href="index.css"> -->
+  
+</head>
+<body class="bg-[hsl(150,14%,6%)] text-white font-sans">
+
+    <!-- NAVBARRRRR -->
+    <header class="">
+  <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      
+      <!-- Logo -->
+      <div class="flex items-center space-x-8">
+        <a href="Landing.html"><h1 class="text-2xl font-bold text-foreground cursor-pointer">PulseLink</h1></a>
+
+        <!-- Navigation -->
+        <nav class="hidden md:flex items-center space-x-6">
+          <a href="#" class="text-foreground hover:text-accent transition-colors">Workouts</a>
+          <a href="#" class="text-foreground hover:text-accent transition-colors">Programs</a>
+          <a href="#" class="text-foreground hover:text-accent transition-colors">Nutrition</a>
+          <a href="#" class="text-foreground hover:text-accent transition-colors">Community</a>
+        </nav>
+      </div>
+
+      <!-- Right side - Search and icons -->
+      <div class="flex items-center space-x-4">
+        <!-- Search -->
+        <div class="relative hidden md:block">
+          <!-- Search Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" 
+               class="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4 "
+               fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <input
+            placeholder="Search..."
+            class="pl-10 w-64 bg-input border border-border rounded-md py-2"
+          />
+        </div>
+
+        <!-- Bell Icon -->
+        <button class="rounded-md text-foreground hover:text-accent h-10 w-10 flex items-center justify-center cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+               class="w-5 h-5" fill="none" viewBox="0 0 24 24" 
+               stroke="currentColor" stroke-width="2">
+            <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+          </svg>
+        </button>
+
+        <!-- User Icon -->
+        <button class="rounded-md text-foreground hover:text-accent h-10 w-10 flex items-center justify-center cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+               class="w-5 h-5" fill="none" viewBox="0 0 24 24" 
+               stroke="currentColor" stroke-width="2">
+            <path d="M5.121 17.804A9 9 0 1118.879 17.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- HERO SECTIONNNN -->
+    <section class="relative h-96 md:h-[500px] overflow-hidden">
+  <img 
+    src="./assets/hero-gym.jpg" 
+    alt="Modern gym interior" 
+    class="w-full h-full object-cover"
+  />
+  <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
+    <div class="text-center text-white max-w-4xl px-6">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">
+        Elevate Your Fitness Journey
+      </h1>
+      <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+        Discover a wide range of workouts tailored to your fitness level and goals. 
+        Whether you prefer the gym or the comfort of your home, we have the perfect program for you.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH SECTIONNNN -->
+<div class="max-w-4xl mx-auto px-6 py-8">
+  <!-- Search Bar -->
+  <div class="relative mb-8">
+    <!-- Search Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         class="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" 
+         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+
+    <input
+      type="text"
+      placeholder="Search"
+      class="pl-12 py-4 text-lg bg-input border border-border rounded-full w-full"
+    />
+  </div>
+
+  <!-- Filter Buttons -->
+  <div class="flex justify-center space-x-4" id="filterButtons">
+    <button class="filter-btn rounded-full px-6 py-2 border border-border text-foreground hover:bg-muted cursor-pointer">
+      All
+    </button>
+    <button class="filter-btn rounded-full px-6 py-2 border border-border text-foreground hover:bg-muted cursor-pointer">
+      Beginner
+    </button>
+    <button class="filter-btn rounded-full px-6 py-2 border border-border text-foreground hover:bg-muted cursor-pointer">
+      Advanced
+    </button>
+  </div>
+</div>
+
+<!-- <script>
+  const buttons = document.querySelectorAll(".filter-btn");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      // remove active class from all
+      buttons.forEach(btn => btn.classList.remove("bg-primary", "text-primary-foreground"));
+
+      // add active class to clicked one
+      button.classList.add("bg-primary", "text-primary-foreground");
+    });
+  });
+</script> -->
+
+
+
+<!-- SHOWING EXERCISES SECTIONNNN -->
+<section class="max-w-7xl mx-auto px-6 py-12">
+  <h2 class="text-3xl font-bold text-foreground mb-12 text-center">
+    Featured Exercises
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+
+    <!-- Cardio -->
+     <a href="exercises.html">
+    <div class="bg-card rounded-lg overflow-hidden border border-border hover:border-accent  cursor-pointer hover:scale-105 transition-transform duration-300">
+      <div class="aspect-square overflow-hidden">
+        <img src="./assets/cardio.jpg" alt="Cardio" 
+             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-card-foreground mb-2">Cardio</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          Boost your cardiovascular health with our high-energy cardio workouts.
+        </p>
+      </div>
+    </div>
+      </a>
+    <!-- Weightlifting -->
+     <a href="exercises.html">
+    <div class="bg-card rounded-lg overflow-hidden border border-border hover:border-accent  cursor-pointer hover:scale-105 transition-transform duration-300">
+      <div class="aspect-square overflow-hidden">
+        <img src="./assets/weightlifting.jpg" alt="Weightlifting" 
+             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-card-foreground mb-2">Weightlifting</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          Build strength and muscle mass with our comprehensive weightlifting programs.
+        </p>
+      </div>
+    </div>
+      </a>
+    <!-- Yoga -->
+      <a href="exercises.html">
+  <div class="bg-card rounded-lg overflow-hidden border border-border hover:border-accent  cursor-pointer hover:scale-105 transition-transform duration-300">
+  <div class="aspect-square overflow-hidden">
+    <img src="./assets/yoga.jpg" alt="Yoga" 
+          class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="p-4">
+    <h3 class="text-lg font-semibold text-card-foreground mb-2">Yoga</h3>
+    <p class="text-sm text-muted-foreground leading-relaxed">
+      Improve flexibility and balance with our calming yoga sessions.
+    </p>
+  </div>
+  </div>
+      </a>
+    <!-- Pilates -->
+      <a href="exercises.html">
+    <div class="bg-card rounded-lg overflow-hidden border border-border hover:border-accent  cursor-pointer hover:scale-105 transition-transform duration-300">
+      <div class="aspect-square overflow-hidden">
+        <img src="./assets/pilates.jpg" alt="Pilates" 
+             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-card-foreground mb-2">Pilates</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          Strengthen your core and improve posture with our effective Pilates routines.
+        </p>
+      </div>
+    </div>
+      </a>
+    <!-- Crossfit -->
+      <a href="exercises.html">
+<div class="bg-card rounded-lg overflow-hidden border border-border hover:border-accent  cursor-pointer hover:scale-105 transition-transform duration-300">
+  <div class="aspect-square overflow-hidden">
+    <img src="./assets/crossfit.jpg" alt="Crossfit" 
+          class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="p-4">
+    <h3 class="text-lg font-semibold text-card-foreground mb-2">Crossfit</h3>
+    <p class="text-sm text-muted-foreground leading-relaxed">
+      Challenge yourself with our intense and varied CrossFit workouts.
+    </p>
+  </div>
+</div>
+      </a>
+    <!-- HIIT -->
+      <a href="exercises.html">
+    <div class="bg-card rounded-lg overflow-hidden border border-border hover:border-accent cursor-pointer hover:scale-105 transition-transform duration-300">
+      <div class="aspect-square overflow-hidden">
+        <img src="./assets/hiit.jpg" alt="HIIT" 
+             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-card-foreground mb-2">HIIT</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          Get a full-body workout in a short amount of time with our high-intensity interval training.
+        </p>
+      </div>
+    </div>
+      </a>
+  </div>
+</section>
+
+
+<!-- HABIT TRACKERRRR -->
+<section class="max-w-2xl mx-auto px-6 py-12">
+  <div class="bg-card rounded-lg p-8 border border-border">
+    <h2 class="text-2xl font-bold text-card-foreground mb-2">
+      Weekly Tracker
+    </h2>
+    <!-- <p class="text-muted-foreground mb-6">Weekly Streak</p> -->
+
+    <!-- Progress Bar -->
+    <div class="mb-8">
+      <div class="flex justify-between items-center mb-2">
+        <span class="text-sm text-muted-foreground">Progress</span>
+        <span id="progress-text" class="text-sm font-medium text-card-foreground">
+          0/7 days
+        </span>
+      </div>
+      <div class="w-full bg-progress-bg rounded-full h-3">
+        <div 
+          id="progress-bar"
+          class="bg-progress-fill h-3 rounded-full transition-all duration-300"
+          style="width: 0%;"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Days Checklist -->
+    <div id="days-list" class="space-y-3">
+      <!-- Days will be inserted here by JS -->
+    </div>
+  </div>
+</section>
+
+
+
+<!-- SCRIPT FOR WEEKLY TRACKERRRR -->
+<script>
+  const daysOfWeek = [
+    { name: "Monday", completed: false },
+    { name: "Tuesday", completed: false },
+    { name: "Wednesday", completed: false },
+    { name: "Thursday", completed: false },
+    { name: "Friday", completed: false },
+    { name: "Saturday", completed: false },
+    { name: "Sunday", completed: false },
+  ];
+
+  const daysList = document.getElementById("days-list");
+  const progressText = document.getElementById("progress-text");
+  const progressBar = document.getElementById("progress-bar");
+
+  function renderDays() {
+    daysList.innerHTML = "";
+
+    daysOfWeek.forEach((day, index) => {
+      const dayDiv = document.createElement("div");
+      dayDiv.className = "flex items-center space-x-3 cursor-pointer";
+
+      const box = document.createElement("div");
+      box.className = `
+        w-6 h-6 rounded border-2 flex items-center justify-center transition-colors
+        ${day.completed ? "bg-green-500 border-green-500 text-white" : "border-border bg-transparent"}
+      `;
+
+      if (day.completed) {
+        box.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" 
+               class="w-4 h-4" fill="none" viewBox="0 0 24 24" 
+               stroke="currentColor" stroke-width="3">
+            <path d="M5 13l4 4L19 7" />
+          </svg>
+        `;
+      }
+
+      const label = document.createElement("span");
+      label.className = day.completed ? "text-card-foreground" : "text-muted-foreground";
+      label.textContent = day.name;
+
+      // Toggle on click
+      dayDiv.addEventListener("click", () => {
+        daysOfWeek[index].completed = !daysOfWeek[index].completed;
+        updateProgress();
+        renderDays();
+      });
+
+      dayDiv.appendChild(box);
+      dayDiv.appendChild(label);
+      daysList.appendChild(dayDiv);
+    });
+  }
+
+  function updateProgress() {
+    const completedDays = daysOfWeek.filter(day => day.completed).length;
+    const totalDays = daysOfWeek.length;
+    const percentage = (completedDays / totalDays) * 100;
+
+    progressText.textContent = `${completedDays}/${totalDays} days`;
+    progressBar.style.width = percentage + "%";
+  }
+
+  // Initial render
+  renderDays();
+  updateProgress();
+</script>
+
+</body>
+</html>

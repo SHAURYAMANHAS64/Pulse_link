@@ -1,0 +1,291 @@
+/* --- Theming Variables (Consistent with Landing Page) --- */
+:root {
+    --primary-color: #00ff85;
+    --dark-color: #111111;
+    --light-gray: #222222;
+    --text-color: #f4f4f4;
+    --font-family: 'Poppins', sans-serif;
+    --error-color: #ef4444;
+    --warning-color: #f59e0b;
+    --info-color: #3b82f6;
+    --success-color: #22c55e;
+}
+
+/* --- Base & Body Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--dark-color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    overflow-x: hidden;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/assets/gym.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- Form Container --- */
+.container {
+    background: rgba(17, 17, 17, 0.85); /* Slightly darker */
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    transform: translateY(0);
+    transition: all 0.5s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 255, 133, 0.1);
+}
+
+/* --- Logo & Header --- */
+.logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo h1 {
+    font-family: var(--font-family); /* Use consistent font */
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 15px rgba(0, 255, 133, 0.2);
+}
+
+.logo p {
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* --- Form Switching Animation --- */
+.form {
+    display: none;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.form.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* --- Form Inputs & Labels --- */
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px;
+    background: var(--light-gray);
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    background: #2a2a2a;
+    box-shadow: 0 0 0 3px rgba(0, 255, 133, 0.2);
+}
+
+.form-group label {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    color: #888;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background-color: var(--light-gray); /* Match input bg for clean animation */
+}
+
+.form-group input:focus + .eye-toggle + label,
+.form-group input:valid + .eye-toggle + label,
+.form-group input:focus + label,
+.form-group input:valid + label {
+    top: -10px;
+    left: 12px;
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    padding: 0 5px;
+}
+
+/* --- Password Specific Styles --- */
+.password-input {
+    padding-right: 50px;
+}
+
+.eye-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.eye-toggle:hover {
+    color: var(--primary-color);
+}
+
+.password-strength {
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+}
+
+.strength-bar {
+    height: 5px;
+    background: #333;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.strength-fill {
+    height: 100%;
+    width: 0%;
+    transition: all 0.4s ease;
+    border-radius: 5px;
+}
+
+.strength-fill.weak { background: var(--error-color); width: 25%; }
+.strength-fill.fair { background: var(--warning-color); width: 50%; }
+.strength-fill.good { background: var(--info-color); width: 75%; }
+.strength-fill.strong { background: var(--success-color); width: 100%; }
+
+.strength-text {
+    font-size: 0.8rem;
+    color: #aaa;
+    display: flex;
+    justify-content: space-between;
+}
+
+.strength-text.weak { color: var(--error-color); }
+.strength-text.fair { color: var(--warning-color); }
+.strength-text.good { color: var(--info-color); }
+.strength-text.strong { color: var(--success-color); }
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 1.5rem;
+    margin-top: -1rem;
+}
+.forgot-password a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+.forgot-password a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Buttons --- */
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 255, 133, 0.25);
+}
+
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.loading {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* --- Toggle Link --- */
+.toggle-form {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #333;
+}
+.toggle-form p {
+    color: #aaa;
+    margin-bottom: 0.25rem;
+}
+.toggle-form a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.toggle-form a:hover {
+    text-decoration: underline;
+}
+
+/* --- On-Load Animation --- */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 480px) {
+    body {
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
+    .container {
+        margin: 1rem;
+        padding: 2rem;
+    }
+}

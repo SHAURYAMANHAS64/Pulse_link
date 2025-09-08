@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulseLink - Account Access</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="login.style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo">
+            <h1>PulseLink</h1>
+            <p>Elevate Your Fitness Journey</p>
+        </div>
+
+        <div class="form-container">
+            <form class="form active" id="loginForm" method="post">
+                <div class="form-group">
+                    <input type="email" id="loginEmail" required>
+                    <label for="loginEmail">Email Address</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" class="password-input" required>
+                    <button type="button" class="eye-toggle" data-target="loginPassword">👁️</button>
+                    <label for="loginPassword">Password</label>
+                </div>
+                <div class="forgot-password">
+                    <a href="#" id="forgotPassword">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn" >
+                    <span class="btn-text">Sign In</span>
+                    <div class="loading"></div>
+                </button>
+            </form>
+
+            <form class="form" id="signupForm">
+                <div class="form-group">
+                    <input type="text" id="signupName" required>
+                    <label for="signupName">Full Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="signupEmail" required>
+                    <label for="signupEmail">Email Address</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="signupPassword" class="password-input" required>
+                    <button type="button" class="eye-toggle" data-target="signupPassword">👁️</button>
+                    <label for="signupPassword">Password</label>
+                </div>
+                <div class="password-strength" id="passwordStrength" style="display: none;">
+                    <div class="strength-bar">
+                        <div class="strength-fill" id="strengthFill"></div>
+                    </div>
+                    <div class="strength-text" id="strengthText">
+                        <span>Password strength</span>
+                        <span id="strengthLevel">Weak</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="confirmPassword" class="password-input" required>
+                    <button type="button" class="eye-toggle" data-target="confirmPassword">👁️</button>
+                    <label for="confirmPassword">Confirm Password</label>
+                </div>
+                <button type="submit" class="btn">
+                    <span class="btn-text">Create Account</span>
+                    <div class="loading"></div>
+                </button>
+            </form>
+        </div>
+
+        <div class="toggle-form">
+            <p id="toggleText">Don't have an account?</p>
+            <a id="toggleLink">Create Account</a>
+        </div>
+    </div>
+    <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        // Prevent the default form submission
+        event.preventDefault();
+
+        // Get the "Sign In" button and loading spinner
+        const submitButton = this.querySelector('.btn');
+        const buttonText = this.querySelector('.btn-text');
+        const loadingSpinner = this.querySelector('.loading');
+
+        // Show the loading spinner and hide the button text
+        buttonText.style.display = 'none';
+        loadingSpinner.style.display = 'block';
+
+        // Simulate a delay for a server request (e.g., a real API call)
+        setTimeout(() => {
+            // Once the "login" is complete, redirect the user
+            window.location.href = '../Landing.html';
+        }, 2000); // 2-second delay to simulate a server response
+    });
+</script>
+    <script src="login.script.js"></script>
+</body>
+</html>

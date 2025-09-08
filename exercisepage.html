@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-[hsl(150,14%,6%)] text-white font-sans">
+
+<!-- NAVBARRRRR -->
+<header class="">
+<div class="max-w-7xl mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+
+<!-- Logo -->
+<div class="flex items-center space-x-8">
+<a href="Landing.html"><h1 class="text-2xl font-bold text-foreground cursor-pointer">PulseLink</h1></a>
+
+<!-- Navigation -->
+<nav class="hidden md:flex items-center space-x-6">
+<a href="#" class="text-foreground hover:text-accent transition-colors">Workouts</a>
+<a href="#" class="text-foreground hover:text-accent transition-colors">Programs</a>
+<a href="#" class="text-foreground hover:text-accent transition-colors">Nutrition</a>
+<a href="#" class="text-foreground hover:text-accent transition-colors">Community</a>
+</nav>
+</div>
+
+<!-- Right side - Search and icons -->
+<div class="flex items-center space-x-4">
+<!-- Search -->
+<div class="relative hidden md:block ">
+<!-- Search Icon -->
+<svg xmlns="http://www.w3.org/2000/svg" 
+    class="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4 "
+    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+<circle cx="11" cy="11" r="8" />
+<line x1="21" y1="21" x2="16.65" y2="16.65" />
+</svg>
+<input
+placeholder="Search..."
+class="pl-10 w-64 bg-input border border-border rounded-md py-2 bg-transparent"
+/>
+</div>
+
+<!-- Bell Icon -->
+<button class="rounded-md text-foreground hover:text-accent h-10 w-10 flex items-center justify-center cursor-pointer">
+<svg xmlns="http://www.w3.org/2000/svg" 
+    class="w-5 h-5" fill="none" viewBox="0 0 24 24" 
+    stroke="currentColor" stroke-width="2">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+</svg>
+</button>
+
+<!-- User Icon -->
+<button class="rounded-md text-foreground hover:text-accent h-10 w-10 flex items-center justify-center cursor-pointer">
+<svg xmlns="http://www.w3.org/2000/svg" 
+    class="w-5 h-5" fill="none" viewBox="0 0 24 24" 
+    stroke="currentColor" stroke-width="2">
+<path d="M5.121 17.804A9 9 0 1118.879 17.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+</svg>
+</button>
+</div>
+</div>
+</div>
+</header>
+
+
+    <!-- HERO SECTIONNNN -->
+<div class="mt-10 w-full h-fit flex items-center justify-center">
+  <img
+    src="assets/exercise-hero.png"
+    alt="Core strengthening exercise demonstration"
+    class="h-80 rounded-2xl"
+  />
+  <!-- <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div> -->
+</div>
+
+<div class="ml-20 mr-20">
+
+<!-- Exercise INFOOOO -->
+<div class="space-y-8 mt-20">
+  <!-- Exercise Header -->
+  <div class="space-y-4">
+    <h1 class="text-3xl md:text-4xl font-bold text-foreground">
+      Core Stability Hold
+    </h1>
+    <p class="text-lg text-text-secondary ml-5">
+      This exercise targets the core and improves stability. It's a great addition to any workout routine.
+    </p>
+  </div>
+
+  <!-- Description -->
+  <div class="space-y-4">
+    <h2 class="text-xl font-semibold text-foreground">Description</h2>
+    <p class="text-text-secondary leading-relaxed ml-5">
+      This exercise is designed to strengthen your core muscles, enhancing stability and balance. 
+      It involves controlled movements that engage multiple muscle groups, making it effective for 
+      improving overall fitness and preventing injuries. The hold position challenges your 
+      endurance while building functional strength.
+    </p>
+  </div>
+
+  <!-- Info Blocks -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="bg-card p-6 rounded-xl bg-[hsl(150,27%,10%)]">
+      <h3 class="font-semibold text-foreground mb-2">Targeted Muscle Group</h3>
+      <p class="text-text-secondary">Core</p>
+    </div>
+    <div class="bg-card p-6 rounded-xl  bg-[hsl(150,27%,10%)]">
+      <h3 class="font-semibold text-foreground mb-2">Difficulty Level</h3>
+      <p class="text-text-secondary">Intermediate</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- NEXT Exercise -->
+<div class="bg-card p-6 rounded-xl  mt-20 bg-[hsl(150,27%,10%)]">
+  <h3 class="text-xl font-semibold text-foreground mb-6">Next Recommended Exercise</h3>
+
+  <div class="flex flex-col lg:flex-row gap-6 items-start">
+    <!-- Text Section -->
+    <div class="flex-1 space-y-4">
+      <div>
+        <p class="text-sm text-text-muted mb-1">Next Up</p>
+        <h4 class="text-lg font-semibold text-foreground">Plank with Leg Lift</h4>
+      </div>
+
+      <p class="text-text-secondary">
+        Strengthen your core with this challenging variation that adds dynamic movement to the traditional plank.
+      </p>
+
+      <button
+        class="bg-green-500 hover:bg-green-900 transition-all duration-150 px-4 py-2 rounded-lg w-full lg:w-auto font-medium"
+      >
+        Start
+      </button>
+    </div>
+
+    <!-- Image Section -->
+    <div class="w-full lg:w-48 h-36 rounded-xl overflow-hidden bg-surface flex-shrink-0">
+      <img
+        src="assets/next-exercise.png"
+        alt="Plank with leg lift exercise demonstration"
+        class="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- TIMERRRR -->
+
+<div class="flex justify-center items-center">
+      <div class="bg-[hsl(150,27%,10%)] p-8 rounded-2xl  shadow-lg w-full max-w-xl mt-20 ">
+    <!-- Timer Display -->
+    <div class="flex justify-center gap-4 mb-8">
+      <div class="bg-gray-50 px-6 py-4 rounded-xl min-w-[80px] text-center">
+        <div id="hours" class="text-3xl font-mono font-bold text-gray-900">00</div>
+        <div class="text-sm text-gray-500">Hours</div>
+      </div>
+      <div class="bg-gray-50 px-6 py-4 rounded-xl min-w-[80px] text-center">
+        <div id="minutes" class="text-3xl font-mono font-bold text-gray-900">00</div>
+        <div class="text-sm text-gray-500">Minutes</div>
+      </div>
+      <div class="bg-gray-50 px-6 py-4 rounded-xl min-w-[80px] text-center">
+        <div id="seconds" class="text-3xl font-mono font-bold text-gray-900">00</div>
+        <div class="text-sm text-gray-500">Seconds</div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="flex justify-center gap-4">
+      <button id="startBtn" class="bg-green-500 hover:bg-green-700 text-white px-8 py-3 text-lg rounded-lg flex items-center gap-2">
+        ▶ Start
+      </button>
+      
+      <button id="pauseBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-8 py-3 text-lg rounded-lg flex items-center gap-2" disabled>
+        ⏸ Pause
+      </button>
+      
+      <button id="stopBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-8 py-3 text-lg rounded-lg flex items-center gap-2">
+        ⏹ Stop
+      </button>
+    </div>
+  </div>
+</div>
+
+
+  <script>
+    let time = 0;
+    let isRunning = false;
+    let isPaused = false;
+    let interval = null;
+
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+
+    const startBtn = document.getElementById("startBtn");
+    const pauseBtn = document.getElementById("pauseBtn");
+    const stopBtn = document.getElementById("stopBtn");
+
+    function formatTime(seconds) {
+      const hours = Math.floor(seconds / 3600);
+      const minutes = Math.floor((seconds % 3600) / 60);
+      const secs = seconds % 60;
+
+      return {
+        hours: String(hours).padStart(2, "0"),
+        minutes: String(minutes).padStart(2, "0"),
+        seconds: String(secs).padStart(2, "0"),
+      };
+    }
+
+    function updateDisplay() {
+      const { hours, minutes, seconds } = formatTime(time);
+      hoursEl.textContent = hours;
+      minutesEl.textContent = minutes;
+      secondsEl.textContent = seconds;
+    }
+
+    startBtn.addEventListener("click", () => {
+      if (!isRunning || isPaused) {
+        isRunning = true;
+        isPaused = false;
+        interval = setInterval(() => {
+          time++;
+          updateDisplay();
+        }, 1000);
+        startBtn.disabled = true;
+        pauseBtn.disabled = false;
+      }
+    });
+
+    pauseBtn.addEventListener("click", () => {
+      if (isRunning && !isPaused) {
+        clearInterval(interval);
+        isPaused = true;
+        startBtn.disabled = false;
+        pauseBtn.disabled = true;
+      }
+    });
+
+    stopBtn.addEventListener("click", () => {
+      clearInterval(interval);
+      isRunning = false;
+      isPaused = false;
+      time = 0;
+      updateDisplay();
+      startBtn.disabled = false;
+      pauseBtn.disabled = true;
+    });
+
+    updateDisplay();
+  </script>
+
+</div>
+
+
+</body>
+</html>
